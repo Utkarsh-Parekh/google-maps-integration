@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 
-
 //Provider class that helps to Upload and Crop the Selected Image
 class ImagePickerProvider extends ChangeNotifier {
   File? _image;
@@ -50,8 +49,7 @@ class ImagePickerProvider extends ChangeNotifier {
         _imageUrl = await reference.getDownloadURL();
       } catch (e) {
         debugPrint("Error while uploading");
-      }
-      finally {
+      } finally {
         _isUploading = false;
         notifyListeners();
       }
@@ -75,7 +73,6 @@ class ImagePickerProvider extends ChangeNotifier {
       notifyListeners();
     }
   }
-
 
   //Method to Crop the Selected Image
   Future<File?> cropImage(File ImageFile) async {

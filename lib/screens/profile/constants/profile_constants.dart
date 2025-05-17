@@ -1,5 +1,4 @@
 class ProfileConstants {
-
   static const String editProfileConst = "Edit Profile";
   static const String ProfileConst = "Profile";
   static const String fullNameConst = 'Full Name';

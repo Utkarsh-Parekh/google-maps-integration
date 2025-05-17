@@ -16,13 +16,19 @@ class TaskBloc extends Bloc<TaskEvent, TaskState> {
 
   Future<void> _addTask(AddTask event, Emitter<TaskState> emit) async {
     emit(state.copyWith(isLoading: true));
-    await firestore.collection('Tasks').doc(event.task.id).set(event.task.toMap());
+    await firestore
+        .collection('Tasks')
+        .doc(event.task.id)
+        .set(event.task.toMap());
     add(FetchTasks());
   }
 
   Future<void> _updateTask(UpdateTask event, Emitter<TaskState> emit) async {
     emit(state.copyWith(isLoading: true));
-    await firestore.collection('Tasks').doc(event.task.id).update(event.task.toMap());
+    await firestore
+        .collection('Tasks')
+        .doc(event.task.id)
+        .update(event.task.toMap());
     add(FetchTasks());
   }
 
@@ -36,7 +42,9 @@ class TaskBloc extends Bloc<TaskEvent, TaskState> {
     emit(state.copyWith(isLoading: true));
     try {
       final querySnapshot = await firestore.collection('Tasks').get();
-      final tasks = querySnapshot.docs.map((doc) => TaskModel.fromMap(doc.data())).toList();
+      final tasks = querySnapshot.docs
+          .map((doc) => TaskModel.fromMap(doc.data()))
+          .toList();
       emit(state.copyWith(tasks: tasks, isLoading: false));
     } catch (e) {
       emit(state.copyWith(error: "Failed to fetch tasks", isLoading: false));

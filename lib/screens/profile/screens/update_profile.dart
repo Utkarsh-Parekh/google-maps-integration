@@ -42,7 +42,9 @@ class _UpdateProfileState extends State<UpdateProfile> {
         title: BlocBuilder<ProfileBloc, ProfileState>(
           builder: (context, state) {
             return Text(
-                state.isProfileAvailable ? ProfileConstants.editProfileConst : ProfileConstants.createProfileConst,
+                state.isProfileAvailable
+                    ? ProfileConstants.editProfileConst
+                    : ProfileConstants.createProfileConst,
                 style: Theme.of(context).textTheme.titleLarge!);
           },
         ),
@@ -98,53 +100,50 @@ class _UpdateProfileState extends State<UpdateProfile> {
                   }
 
                   return Form(
-                    key: _key,
+                      key: _key,
                       child: Column(
-                    children: [
-                      TextFieldWidget(
-                          controller: firstNameController,
-                          icon: LineAwesomeIcons.user,
-                        label: ProfileConstants.firstNameLabel,
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return ProfileConstants.firstNameValid;
-                          }
-                        },
-
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      TextFieldWidget(
-                        controller: lastNameController,
-                        icon: LineAwesomeIcons.user,
-                        label: ProfileConstants.LastNameLabel,
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return ProfileConstants.lastNameValid;
-                          }
-                        },
-
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      TextFieldWidget(
-                          controller: emailController,
-                          icon: LineAwesomeIcons.mail_bulk_solid,
-                        label: ProfileConstants.emailIdConst
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      TextFieldWidget(
-                        controller: phoneController,
-                        icon: LineAwesomeIcons.phone_alt_solid,
-                        isNumber: true,
-                        label: ProfileConstants.phoneNumberConst,
-                      )
-                    ],
-                  ));
+                        children: [
+                          TextFieldWidget(
+                            controller: firstNameController,
+                            icon: LineAwesomeIcons.user,
+                            label: ProfileConstants.firstNameLabel,
+                            validator: (value) {
+                              if (value!.isEmpty) {
+                                return ProfileConstants.firstNameValid;
+                              }
+                            },
+                          ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          TextFieldWidget(
+                            controller: lastNameController,
+                            icon: LineAwesomeIcons.user,
+                            label: ProfileConstants.LastNameLabel,
+                            validator: (value) {
+                              if (value!.isEmpty) {
+                                return ProfileConstants.lastNameValid;
+                              }
+                            },
+                          ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          TextFieldWidget(
+                              controller: emailController,
+                              icon: LineAwesomeIcons.mail_bulk_solid,
+                              label: ProfileConstants.emailIdConst),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          TextFieldWidget(
+                            controller: phoneController,
+                            icon: LineAwesomeIcons.phone_alt_solid,
+                            isNumber: true,
+                            label: ProfileConstants.phoneNumberConst,
+                          )
+                        ],
+                      ));
                 },
               ),
               const SizedBox(
@@ -152,7 +151,7 @@ class _UpdateProfileState extends State<UpdateProfile> {
               ),
               ElevatedButton(
                 onPressed: () {
-                  if(_key.currentState!.validate()){
+                  if (_key.currentState!.validate()) {
                     NotificationServices().showNotifications(
                       title: 'Profile Updated',
                       body: 'Your profile has been successfully updated.',
@@ -160,17 +159,16 @@ class _UpdateProfileState extends State<UpdateProfile> {
                     );
 
                     context.read<ProfileBloc>().add(
-                      SaveProfileDetails(
-                        firstName: firstNameController.text.trimLeft(),
-                        lastName: lastNameController.text.trimLeft(),
-                        email: emailController.text,
-                        phoneNumber: phoneController.text,
-                      ),
-                    );
+                          SaveProfileDetails(
+                            firstName: firstNameController.text.trimLeft(),
+                            lastName: lastNameController.text.trimLeft(),
+                            email: emailController.text,
+                            phoneNumber: phoneController.text,
+                          ),
+                        );
 
                     context.pop();
                   }
-
                 },
                 style: ElevatedButton.styleFrom(shape: const StadiumBorder()),
                 child: Text(

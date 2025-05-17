@@ -1,14 +1,13 @@
 import 'package:equatable/equatable.dart';
 
-abstract class ProfileEvent extends Equatable{
+abstract class ProfileEvent extends Equatable {
   @override
   List<Object?> get props => [];
-
 }
-class FetchProfileDetails extends ProfileEvent{}
 
-class SaveProfileDetails extends ProfileEvent{
+class FetchProfileDetails extends ProfileEvent {}
 
+class SaveProfileDetails extends ProfileEvent {
   final String firstName;
   final String lastName;
   final String email;
@@ -19,9 +18,5 @@ class SaveProfileDetails extends ProfileEvent{
     required this.lastName,
     required this.email,
     required this.phoneNumber,
-
-});
+  });
 }
-
-
-

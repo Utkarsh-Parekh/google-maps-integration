@@ -9,8 +9,8 @@ class AddTask extends TaskEvent {
 }
 
 class UpdateTask extends TaskEvent {
-
   final TaskModel task;
+
   UpdateTask(this.task);
 }
 

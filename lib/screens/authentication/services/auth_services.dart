@@ -6,9 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-
 class AuthService {
-
   // Singleton Instance
   static final AuthService _instance = AuthService._internal();
 
@@ -17,7 +15,6 @@ class AuthService {
 
   // Private Constructor
   AuthService._internal();
-
 
   //SIGN IN
   Future<void> signInUserWithEmailAndPassword(
@@ -43,7 +40,6 @@ class AuthService {
 
       //Navigation to Home Page
       context.go("/tasks");
-
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         DelightToastBar(
@@ -80,7 +76,6 @@ class AuthService {
     }
   }
 
-
   //SIGN UP THE USER
   Future<void> signUpUserWithEmailAndPassword(
       BuildContext context, String email, String password) async {
@@ -106,7 +101,6 @@ class AuthService {
 
         //navigation to home page
         context.go('/tasks');
-
       } on FirebaseAuthException catch (e) {
         if (e.code == 'weak-password') {
           DelightToastBar(
@@ -147,7 +141,6 @@ class AuthService {
     }
   }
 
-
   //FOR RESET PASSWORD
   Future<void> resetPassword(String email, BuildContext context) async {
     try {
@@ -187,16 +180,12 @@ class AuthService {
     }
   }
 
-
-
   //SIGN OUT
   Future<void> signOut(BuildContext context) async {
-    final SharedPreferences prefs =
-    await SharedPreferences.getInstance();
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
 
     prefs.setBool("email", false);
     await FirebaseAuth.instance.signOut();
     context.go('/signIn');
   }
-
 }

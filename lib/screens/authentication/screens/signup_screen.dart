@@ -40,8 +40,10 @@ class _SignUpPageState extends State<SignUpPage> {
             height: double.infinity,
             decoration: const BoxDecoration(
               gradient: LinearGradient(
-                colors: [Color(0xFF8A2BE2), // Blue Violet
-                  Color(0xFF6A0DAD),],
+                colors: [
+                  Color(0xFF8A2BE2), // Blue Violet
+                  Color(0xFF6A0DAD),
+                ],
                 stops: [0.25, 0.75],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
@@ -103,8 +105,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         controller: emailController,
                         onChanged: (emailValue) {
                           setState(() {
-                            isValidEmail =
-                                EmailValidator.validate(emailValue);
+                            isValidEmail = EmailValidator.validate(emailValue);
                           });
                         },
                         validator: (value) {
@@ -175,7 +176,7 @@ class _SignUpPageState extends State<SignUpPage> {
                               onPressed: () async {
                                 if (_key.currentState!.validate()) {
                                   final SharedPreferences prefs =
-                                  await SharedPreferences.getInstance();
+                                      await SharedPreferences.getInstance();
                                   prefs.setBool("email", true);
                                   await AuthService()
                                       .signUpUserWithEmailAndPassword(
@@ -185,7 +186,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                 }
                               },
                               child: Text(
-                               AuthConstants.signupConst,
+                                AuthConstants.signupConst,
                                 style: GoogleFonts.poppins(
                                     fontSize: 30, color: Colors.white),
                               ),
@@ -193,7 +194,6 @@ class _SignUpPageState extends State<SignUpPage> {
                           ),
                         ],
                       ),
-
                       Expanded(
                         child: Align(
                           alignment: Alignment.bottomRight,

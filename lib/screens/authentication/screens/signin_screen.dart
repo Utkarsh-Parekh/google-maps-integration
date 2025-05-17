@@ -6,7 +6,6 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
 
@@ -43,8 +42,10 @@ class _SignInPageState extends State<SignInPage> {
             height: double.infinity,
             decoration: const BoxDecoration(
               gradient: LinearGradient(
-                colors: [Color(0xFF8A2BE2), // Blue Violet
-                  Color(0xFF6A0DAD),],
+                colors: [
+                  Color(0xFF8A2BE2), // Blue Violet
+                  Color(0xFF6A0DAD),
+                ],
                 stops: [0.25, 0.75],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
@@ -104,9 +105,7 @@ class _SignInPageState extends State<SignInPage> {
                         controller: emailController,
                         onChanged: (emailValue) {
                           setState(() {
-
-                            isValidEmail =
-                                EmailValidator.validate(emailValue);
+                            isValidEmail = EmailValidator.validate(emailValue);
                           });
                         },
                         validator: (value) {
@@ -145,7 +144,7 @@ class _SignInPageState extends State<SignInPage> {
                           hintStyle: const TextStyle(
                               color: Color(0xff3f5efb),
                               fontWeight: FontWeight.bold),
-                          hintText:AuthConstants.enterPasswordconst,
+                          hintText: AuthConstants.enterPasswordconst,
                           suffixIcon: IconButton(
                             icon: Icon(_passwordVisible
                                 ? Icons.visibility
@@ -196,7 +195,7 @@ class _SignInPageState extends State<SignInPage> {
                               onPressed: () async {
                                 if (_key.currentState!.validate()) {
                                   final SharedPreferences prefs =
-                                  await SharedPreferences.getInstance();
+                                      await SharedPreferences.getInstance();
 
                                   prefs.setBool("email", true);
                                   AuthService().signInUserWithEmailAndPassword(
@@ -228,8 +227,8 @@ class _SignInPageState extends State<SignInPage> {
                                       .textTheme
                                       .titleLarge!
                                       .copyWith(
-                                    color: Colors.black,
-                                  ),
+                                        color: Colors.black,
+                                      ),
                                 ),
                               ),
                               InkWell(
@@ -244,8 +243,8 @@ class _SignInPageState extends State<SignInPage> {
                                         .textTheme
                                         .titleLarge!
                                         .copyWith(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.w600),
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.w600),
                                   ),
                                 ),
                               ),

@@ -1,5 +1,4 @@
-class TaskConstants{
-
+class TaskConstants {
   static const String addTask = "Add Task";
   static const String addbuttonText = "Add";
   static const String UpdateTask = 'Update Task';

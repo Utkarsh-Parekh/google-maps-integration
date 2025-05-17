@@ -20,15 +20,14 @@ class ImagePickerWidget extends StatelessWidget {
           child: imageprovider.isFetching || imageprovider.isUploading
               ? const Center(child: CircularProgressIndicator())
               : Image(
-            image: imageprovider.imageUrl != null
-                ? Image.network(
-              imageprovider.imageUrl!,
-              key: UniqueKey(),
-            ).image
-                : const AssetImage(
-                "lib/assets/default.png"),
-            fit: BoxFit.cover,
-          ),
+                  image: imageprovider.imageUrl != null
+                      ? Image.network(
+                          imageprovider.imageUrl!,
+                          key: UniqueKey(),
+                        ).image
+                      : const AssetImage("lib/assets/default.png"),
+                  fit: BoxFit.cover,
+                ),
         ),
       ),
     );
