@@ -1,5 +1,4 @@
-class RouteNames{
-
+class RouteNames {
   static const String initialRoute = "InitialRoute";
   static const String signUpRoute = 'SignUpRoute';
   static const String signInRoute = 'SignInRoute';
@@ -9,6 +8,4 @@ class RouteNames{
   static const String updateRoute = "UpdateRoute";
   static const String addressRoute = "AddressRoute";
   static const String passwordRecoveryRoute = "passwordRecovery";
-
-
 }

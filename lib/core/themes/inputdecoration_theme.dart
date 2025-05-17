@@ -16,7 +16,6 @@ class CustomInputDecorationTheme {
   static InputDecorationTheme darkInputDecoration = InputDecorationTheme(
       border: const OutlineInputBorder(),
       prefixIconColor: Colors.purple,
-
       focusedBorder: OutlineInputBorder(
           borderSide: const BorderSide(width: 2, color: Colors.white),
           borderRadius: BorderRadius.circular(10)),

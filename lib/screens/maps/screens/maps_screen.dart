@@ -60,7 +60,6 @@ class _MapsScreenState extends State<MapsScreen> {
                   child: OutlinedButton.icon(
                     icon: const Icon(Icons.my_location),
                     onPressed: () {
-
                       //Event that fetched current Location of User
                       context
                           .read<LocationBloc>()

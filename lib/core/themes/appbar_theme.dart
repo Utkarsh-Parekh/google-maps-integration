@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 
-class CustomAppBarTheme{
-
+class CustomAppBarTheme {
   static AppBarTheme lightAppBarTheme = AppBarTheme(
     backgroundColor: Colors.deepPurple.shade100,
   );
-  static AppBarTheme darkAppBarTheme = AppBarTheme(
-      backgroundColor: Colors.deepPurple
-  );
-
+  static AppBarTheme darkAppBarTheme =
+      const AppBarTheme(backgroundColor: Colors.deepPurple);
 }

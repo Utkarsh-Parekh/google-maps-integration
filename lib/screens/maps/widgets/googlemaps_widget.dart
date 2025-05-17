@@ -2,7 +2,6 @@ import 'package:demaze_practical/screens/maps/bloc/location-bloc/location_bloc.d
 import 'package:demaze_practical/screens/maps/constants/maps_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:geocoding/geocoding.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class GoogleMapsWidget extends StatefulWidget {
@@ -61,7 +60,6 @@ class _GoogleMapsWidgetState extends State<GoogleMapsWidget> {
             }
           },
           myLocationEnabled: true,
-
           markers: {
             Marker(
               markerId: const MarkerId('CurrentLocation'),
@@ -81,7 +79,7 @@ class _GoogleMapsWidgetState extends State<GoogleMapsWidget> {
                       .showMarkerInfoWindow(const MarkerId('CurrentLocation'));
                 });
               },
-              infoWindow:  const InfoWindow(
+              infoWindow: const InfoWindow(
                 title: MapsConstants.orderDeliveryConst,
                 snippet: MapsConstants.movePinDeliveryConst,
               ),

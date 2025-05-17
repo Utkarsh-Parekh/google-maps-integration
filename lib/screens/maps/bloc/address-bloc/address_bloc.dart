@@ -19,7 +19,10 @@ class AddressBloc extends Bloc<AddressEvent, AddressState> {
     emit(state.copyWith(isLoading: true));
 
     try {
-      await _firestore.collection('Addresses').doc(event.address.id).set(event.address.toMap());
+      await _firestore
+          .collection('Addresses')
+          .doc(event.address.id)
+          .set(event.address.toMap());
       add(FetchSavedAddresses()); // Refresh the address list
     } catch (e) {
       emit(state.copyWith(error: "Failed to add address"));

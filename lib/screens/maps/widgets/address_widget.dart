@@ -99,7 +99,6 @@ class AddressWidget extends StatelessWidget {
   }
 }
 
-
 //Model Bottom Sheet that enables user to add New Addresses
 void _showBottomSheet(BuildContext context) {
   TextEditingController line1Controller = TextEditingController();
@@ -149,13 +148,11 @@ void _showBottomSheet(BuildContext context) {
               decoration: InputDecoration(
                 labelText: MapsConstants.completeAddressConst,
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                    borderSide: const BorderSide(color: Colors.purple)
-                ),
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: const BorderSide(color: Colors.purple)),
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                    borderSide: const BorderSide(color: Colors.purple)
-                ),
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: const BorderSide(color: Colors.purple)),
               ),
             ),
             const SizedBox(
@@ -166,13 +163,11 @@ void _showBottomSheet(BuildContext context) {
               decoration: InputDecoration(
                 labelText: MapsConstants.areaLabelconst,
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                    borderSide: const BorderSide(color: Colors.purple)
-                ),
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: const BorderSide(color: Colors.purple)),
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                    borderSide: const BorderSide(color: Colors.purple)
-                ),
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: const BorderSide(color: Colors.purple)),
               ),
             ),
             const SizedBox(height: 10),
@@ -181,13 +176,11 @@ void _showBottomSheet(BuildContext context) {
               decoration: InputDecoration(
                 labelText: MapsConstants.landMarkLabelconst,
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  borderSide: const BorderSide(color: Colors.purple)
-                ),
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: const BorderSide(color: Colors.purple)),
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                    borderSide: const BorderSide(color: Colors.purple)
-                ),
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: const BorderSide(color: Colors.purple)),
               ),
             ),
             const SizedBox(height: 20),

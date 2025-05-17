@@ -17,9 +17,8 @@ class AddressState {
     bool? isLoading,
   }) {
     return AddressState(
-      savedAddresses: savedAddresses ?? this.savedAddresses,
-      isLoading: isLoading ?? this.isLoading,
-      error: error ?? this.error
-    );
+        savedAddresses: savedAddresses ?? this.savedAddresses,
+        isLoading: isLoading ?? this.isLoading,
+        error: error ?? this.error);
   }
 }

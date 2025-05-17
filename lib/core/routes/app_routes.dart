@@ -22,7 +22,6 @@ class AppRoutes {
   static final _navigatorHomeKey =
       GlobalKey<NavigatorState>(debugLabel: "shellHome");
 
-
   static final _navigatorMapsKey =
       GlobalKey<NavigatorState>(debugLabel: "shellMaps");
 
@@ -32,10 +31,7 @@ class AppRoutes {
   static final GoRouter routes = GoRouter(
     initialLocation: "/splash",
     navigatorKey: _navigatorKey,
-
     routes: [
-
-
       //Splash Screen Route
       GoRoute(
         path: "/splash",
@@ -47,38 +43,38 @@ class AppRoutes {
         },
       ),
 
-          //Sign Up screen Route
-          GoRoute(
-            path: "/signup",
-            name: RouteNames.signUpRoute,
-            builder: (context, state) {
-              return SignUpPage(
-                key: state.pageKey,
-              );
-            },
-          ),
+      //Sign Up screen Route
+      GoRoute(
+        path: "/signup",
+        name: RouteNames.signUpRoute,
+        builder: (context, state) {
+          return SignUpPage(
+            key: state.pageKey,
+          );
+        },
+      ),
 
-          //Sign In screen Route
-          GoRoute(
-            path: "/signIn",
-            name: RouteNames.signInRoute,
-            builder: (context, state) {
-              return SignInPage(
-                key: state.pageKey,
-              );
-            },
-          ),
+      //Sign In screen Route
+      GoRoute(
+        path: "/signIn",
+        name: RouteNames.signInRoute,
+        builder: (context, state) {
+          return SignInPage(
+            key: state.pageKey,
+          );
+        },
+      ),
 
-          //Password Recovery Route
-          GoRoute(
-            path: "/passwordRecovery",
-            name: RouteNames.passwordRecoveryRoute,
-            builder: (context, state) {
-              return PasswordRecovery(
-                key: state.pageKey,
-              );
-            },
-          ),
+      //Password Recovery Route
+      GoRoute(
+        path: "/passwordRecovery",
+        name: RouteNames.passwordRecoveryRoute,
+        builder: (context, state) {
+          return PasswordRecovery(
+            key: state.pageKey,
+          );
+        },
+      ),
 
       StatefulShellRoute.indexedStack(
         builder: (context, state, navigationShell) {
@@ -87,7 +83,6 @@ class AppRoutes {
           );
         },
         branches: [
-
           //Tasks Screen route
           StatefulShellBranch(
             navigatorKey: _navigatorHomeKey,

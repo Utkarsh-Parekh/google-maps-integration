@@ -10,14 +10,13 @@ class SearchBarWidget extends StatelessWidget {
       top: 10,
       left: 16,
       right: 16,
-      child:
-      Container(
+      child: Container(
         height: 50,
         width: double.infinity,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),
-          boxShadow: const[
+          boxShadow: const [
             BoxShadow(
               color: Colors.black26,
               blurRadius: 5,
@@ -25,7 +24,7 @@ class SearchBarWidget extends StatelessWidget {
             ),
           ],
         ),
-        child:  const TextField(
+        child: const TextField(
           decoration: InputDecoration(
             hintText: MapsConstants.searchLocation,
             prefixIcon: Icon(Icons.search),

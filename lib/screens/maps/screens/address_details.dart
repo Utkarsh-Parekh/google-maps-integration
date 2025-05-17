@@ -11,7 +11,6 @@ import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 class AddressDetails extends StatelessWidget {
   const AddressDetails({super.key});
 
-
   //Widget that shows all Saved Addresses
   @override
   Widget build(BuildContext context) {
@@ -52,7 +51,7 @@ class AddressDetails extends StatelessWidget {
 
                   const SizedBox(height: 20),
 
-                   const Row(
+                  const Row(
                     children: [
                       Expanded(
                         child: Divider(
@@ -87,15 +86,17 @@ class AddressDetails extends StatelessWidget {
                   Expanded(
                     child: state.savedAddresses == null ||
                             state.savedAddresses!.isEmpty
-                        ?  const Center(child: Text(MapsConstants.noAddressAvailableConst))
+                        ? const Center(
+                            child: Text(MapsConstants.noAddressAvailableConst))
                         : ListView.builder(
                             itemCount: state.savedAddresses!.length,
                             itemBuilder: (context, index) {
                               final address = state.savedAddresses![index];
                               return Container(
                                 decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    color: Colors.grey.shade600),
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Colors.deepPurple.shade500,
+                                ),
                                 padding: const EdgeInsets.all(20),
                                 margin:
                                     const EdgeInsets.symmetric(vertical: 10),
@@ -111,7 +112,8 @@ class AddressDetails extends StatelessWidget {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          address.address ?? MapsConstants.noAddress,
+                                          address.address ??
+                                              MapsConstants.noAddress,
                                           style: Theme.of(context)
                                               .textTheme
                                               .bodyLarge,

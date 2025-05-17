@@ -6,7 +6,6 @@ import 'package:demaze_practical/core/themes/text_theme.dart';
 import 'package:flutter/material.dart';
 
 class AppThemes {
-
   //Light Theme
   static ThemeData lightTheme = ThemeData(
       brightness: Brightness.light,
@@ -19,12 +18,9 @@ class AppThemes {
           CustomBottomNavigationTheme.lightBottomNavigationTheme,
       // outlinedButtonTheme: ,
       inputDecorationTheme: CustomInputDecorationTheme.lightInputDecoration,
-
       floatingActionButtonTheme: FloatingActionButtonThemeData(
           backgroundColor: Colors.deepPurple.shade100,
           foregroundColor: Colors.black));
-
-
 
   //Dark Theme
   static ThemeData darkTheme = ThemeData(

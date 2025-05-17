@@ -1,57 +1,47 @@
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
-class NotificationServices{
-
-
+class NotificationServices {
   final notification = FlutterLocalNotificationsPlugin();
   bool _isInitilized = false;
 
   bool get isInitialized => _isInitilized;
 
   //Initializing the notification services
-  Future<void> initializeNotification() async{
-
-    const initializeAndroid = AndroidInitializationSettings('@mipmap/ic_launcher');
+  Future<void> initializeNotification() async {
+    const initializeAndroid =
+        AndroidInitializationSettings('@mipmap/ic_launcher');
     const initializeIos = DarwinInitializationSettings(
       requestSoundPermission: true,
       requestBadgePermission: true,
       requestAlertPermission: true,
     );
 
-    const InitializationSettings initializationSettings = InitializationSettings(
-      android: initializeAndroid,
-      iOS: initializeIos
-    );
+    const InitializationSettings initializationSettings =
+        InitializationSettings(android: initializeAndroid, iOS: initializeIos);
 
     await notification.initialize(initializationSettings);
   }
 
+  NotificationDetails notifictiondetails() {
+    return const NotificationDetails(
+        android: AndroidNotificationDetails(
+            'default_channel_demaze', 'Notification Deamze ',
+            importance: Importance.max, priority: Priority.high),
+        iOS: DarwinNotificationDetails());
+  }
 
-    NotificationDetails notifictiondetails(){
-      return const NotificationDetails(
-        android: AndroidNotificationDetails('default_channel_demaze', 'Notification Deamze ',
-          importance: Importance.max,
-          priority:Priority.high
-        ),
-
-        iOS: DarwinNotificationDetails()
-      );
-    }
-
-    Future<void> showNotifications({
+  Future<void> showNotifications({
     int id = 0,
-      String? title,
-      String? body,
-
-}) async{
+    String? title,
+    String? body,
+  }) async {
     return notification.show(id, title, body, notifictiondetails());
-    }
+  }
 
-
-
-    //ALARM NOTIFICATION
+  //ALARM NOTIFICATION
   Future<void> showAlarmNotification() async {
-    const AndroidNotificationDetails androidDetails = AndroidNotificationDetails(
+    const AndroidNotificationDetails androidDetails =
+        AndroidNotificationDetails(
       'alarm_channel_id',
       'Alarm Channel',
       importance: Importance.max,
@@ -62,7 +52,8 @@ class NotificationServices{
       ],
     );
 
-    const NotificationDetails platformDetails = NotificationDetails(android: androidDetails);
+    const NotificationDetails platformDetails =
+        NotificationDetails(android: androidDetails);
 
     await notification.show(
       1, // Unique ID for Alarm
@@ -72,5 +63,4 @@ class NotificationServices{
       payload: 'alarm',
     );
   }
-
 }

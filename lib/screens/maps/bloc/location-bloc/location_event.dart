@@ -1,15 +1,15 @@
 part of 'location_bloc.dart';
 
-abstract class LocationEvent extends Equatable{}
+abstract class LocationEvent extends Equatable {}
 
-class GetUserCurrentLocation extends LocationEvent{
+class GetUserCurrentLocation extends LocationEvent {
   @override
   List<Object?> get props => [];
 }
 
-class UpdateCurrentLocation extends LocationEvent{
-
+class UpdateCurrentLocation extends LocationEvent {
   final LatLng position;
+
   UpdateCurrentLocation(this.position);
 
   @override
@@ -18,6 +18,7 @@ class UpdateCurrentLocation extends LocationEvent{
 
 class OnCameraMove extends LocationEvent {
   final LatLng position;
+
   OnCameraMove(this.position);
 
   @override

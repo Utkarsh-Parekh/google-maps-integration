@@ -6,7 +6,7 @@ class CustomElevatedButtonTheme {
     style: ElevatedButton.styleFrom(
       backgroundColor: Colors.deepPurple.shade200,
       foregroundColor: Colors.white,
-       textStyle: const TextStyle(fontSize: 16, color: Colors.black),
+      textStyle: const TextStyle(fontSize: 16, color: Colors.black),
     ),
   );
   static ElevatedButtonThemeData darkElavatedbuttonTheme =
